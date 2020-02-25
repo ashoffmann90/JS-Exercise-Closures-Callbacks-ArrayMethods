@@ -48,8 +48,8 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(list, cb) {
-  return cb(list.length);
+function processLength(list, callback) {
+  return callback(list.length);
 }
 
 /**
@@ -87,8 +87,8 @@ function processLastItem(stringList, callback) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(numberList, cb) {
-  return cb(numberList.reduce(function(acc, cV){
+function processSum(numberList, callback) {
+  return callback(numberList.reduce(function(acc, cV){
     return acc + cV;
   }, 0))
 }
@@ -111,8 +111,8 @@ function processSum(numberList, cb) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(num1, num2, cb) {
-  return cb(num1 * num2)
+function processProduct(num1, num2, callback) {
+  return callback(num1 * num2)
 }
 
 /**
@@ -135,8 +135,8 @@ function processProduct(num1, num2, cb) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(item, list, cb) {
-  return cb(list.includes(item))
+function processContains(item, list, callback) {
+  return callback(list.includes(item))
 }
 
 /**
@@ -158,7 +158,7 @@ function processContains(item, list, cb) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(list, cb) {
+function processDuplicateFree(list, callback) {
   return Array.from(new Set(list));
 }
 
